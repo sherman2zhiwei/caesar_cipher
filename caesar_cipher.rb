@@ -32,6 +32,6 @@ def caesar_cipher(string, factor)
 end
 
 get '/' do	
-	"Hello World!"
+	erb :index
 end
 
