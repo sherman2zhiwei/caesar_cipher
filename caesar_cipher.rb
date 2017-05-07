@@ -31,7 +31,21 @@ def caesar_cipher(string, factor)
 	return final_string
 end
 
-get '/' do	
-	erb :index
+get '/' do
+
+	if params.empty?
+		display = 'main'
+		erb :index, :locals => {:display => display}
+	else
+		display = 'result'
+		string = params['string']
+		factor = params['factor'].to_i
+		results = caesar_cipher(string, factor)
+		erb :index, :locals => {:display => display, :results => results}
+	end
+
+
 end
+
+
 

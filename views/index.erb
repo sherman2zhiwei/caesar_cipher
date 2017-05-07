@@ -3,9 +3,11 @@
 		
 	</head>
 	<body>
-		<h1 align="center">Caesar Cipher takes a string and a factor, then encrypts the string by moving each character in the string by the constant factor. </h1>
-		<p align="center">Enter your details below</p>		
+	<% if display == 'main' %>
 		<div align="center">
+			<h1>Caesar Cipher takes a string and a factor, then encrypts the string by moving each character in the string by the constant factor. </h1>
+			<h3>Enter your details below</h3>		
+
 			<form>
 			  <input type='text' name='string', placeholder="Enter the string here" />
 			  <p></p>
@@ -13,6 +15,13 @@
 			  <p></p>
 			  <input type='submit' value='Send' />
 			</form>
+
 		</div>
+	<% elsif display == 'result' %>
+		<div align = "center">
+		<h1>Your result string is</h1>
+		<h3><%= results %></h3>
+		</div>
+	<%end%>
 	</body>
 </html>
